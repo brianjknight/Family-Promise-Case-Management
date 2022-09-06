@@ -1,8 +1,8 @@
-# coder-heroes-be-a
+# family-promise-case-mgmt-be-a
 
 ### Basic Java API Scaffold
 
-Welcome to your `Coder Heroes`. Use this to start your own Greenfield Project using java, spring, and common industry standards.
+Welcome to your `Family Promise`. Use this to start your own Greenfield Project using java, spring, and common industry standards.
 
 This repository assumes a handful of industry practices and standards. We strive to keep you on the bleeding edge of the industry and as a result, we have made some opinions for you so that you don't have to; you're welcome.
 
