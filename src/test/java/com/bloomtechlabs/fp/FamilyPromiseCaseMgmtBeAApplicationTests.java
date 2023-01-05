@@ -1,10 +1,10 @@
-package com.bloomtechlabs.coderheroesbea;
+package com.bloomtechlabs.fp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CoderheroesbeaApplicationTests {
+class FamilyPromiseCaseMgmtBeAApplicationTests {
 
 	@Test
 	void contextLoads() {
