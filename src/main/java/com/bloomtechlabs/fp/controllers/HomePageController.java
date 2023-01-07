@@ -7,13 +7,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 /**
- * {@link HomeController} is a controller for the home page.
+ * {@link HomePageController} is a controller for the home page.
  */
 @Controller
-public class HomeController {
+public class HomePageController {
     
     /**
-     * {@link HomeController#home(Model, OidcUser)} returns the home page.
+     * {@link HomePageController#home(Model, OidcUser)} show profile
+     * information associated with the logged-in users
      *
      * @param model the model
      * @param principal the authentication principal
@@ -21,6 +22,9 @@ public class HomeController {
      */
     @GetMapping("/")
     public String home(Model model, @AuthenticationPrincipal OidcUser principal) {
+        if (principal != null) {
+            model.addAttribute("profile", principal.getClaims());
+        }
         return "index";
     }
 }
