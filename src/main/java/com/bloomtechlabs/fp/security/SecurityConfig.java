@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 /**
  * {@link SecurityConfig} is a configuration class for Spring Security that
@@ -13,8 +14,18 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfig {
     
+    private final LogoutHandler logoutHandler;
     /**
-     * This method will provide an instance of {@link SecurityFilterChain}
+     * {@link SecurityConfig} constructor for the {@link LogoutHandler}.
+     * @param logoutHandler the logout handler
+     */
+    public SecurityConfig(LogoutHandler logoutHandler) {
+        this.logoutHandler = logoutHandler;
+    }
+    
+    /**
+     * This method will provide an instance of {@link SecurityFilterChain},
+     * {@link LogoutHandler}.
      * @param http {@link HttpSecurity} object
      * @return {@link SecurityFilterChain} object
      * @throws Exception if any error occurs
@@ -22,6 +33,9 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http.oauth2Login()
+                 .and().logout()
+                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                 .addLogoutHandler(logoutHandler)
                  .and().build();
     }
 }
