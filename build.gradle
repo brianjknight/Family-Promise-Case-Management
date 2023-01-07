@@ -33,9 +33,9 @@ dependencies {
 	runtimeOnly 'org.postgresql:postgresql'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	// added for 0auth2
-	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity'
+	// added for 0auth2, for some reason, tymeleaf is not working is not found
+	//implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	//implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity'
 	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
 }
 
