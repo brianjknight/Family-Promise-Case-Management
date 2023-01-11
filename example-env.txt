@@ -1,0 +1,5 @@
+PORT=8000
+AUTH0_AUDIENCE=https://family-promise-case-mgmt.herokuapp.com/
+AUTH0-CONNECTION=Username-Password-Authentication
+AUTH0_ISSUER=https://dev-35n2stap.auth0.com/
+AUTH0_JWKS_URI=https://dev-35n2stap.auth0.com/.well-known/jwks.json
