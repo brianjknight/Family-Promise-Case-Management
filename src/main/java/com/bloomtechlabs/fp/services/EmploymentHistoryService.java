@@ -32,7 +32,7 @@ public class EmploymentHistoryService {
     public ResponseEntity<EmploymentHistory> updateEmploymentHistory(Long id, EmploymentHistory employmentHistoryDetails) {
         EmploymentHistory employmentHistory = findEmploymentHistoryById(id);
 
-        employmentHistory.setClientId(            employmentHistoryDetails.getClientId()); // might not need
+        employmentHistory.setClientId(            employmentHistoryDetails.getClientId());
         employmentHistory.setCurrentlyEmployed(   employmentHistoryDetails.getCurrentlyEmployed());
         employmentHistory.setSkillCertifications( employmentHistoryDetails.getSkillCertifications());
 
