@@ -1,5 +1,7 @@
 package com.bloomtechlabs.fp.entities;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,11 +9,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.math.BigInteger;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
-// TODO should we allow the id & created_at attributes to have setters? I assume these are auto generated and should not be changed.
 /**
  * Postgresql table for households entity.
+ * Attributes id & created_at are annotated to automatically generate. No setters are provided so that they cannot be changed.
  */
 @Entity
 @Table(name = "households")
@@ -59,13 +62,12 @@ public class Household {
     private String dcyf_contact_phone_number;
     @Column(name = "section_8_voucher_lost")
     private Boolean section_8_voucher_lost;
-    @Column(name = "created_at")
-    private String created_at;
+    @CreationTimestamp
+    private LocalDateTime created_at;
 
     public Household() {}
 
     private Household(HouseholdBuilder builder) {
-        this.id = builder.id;
         this.name = builder.name;
         this.times_homeless_in_three_years = builder().times_homeless_in_three_years;
         this.total_time_homeless_three_years = builder().total_time_homeless_three_years;
@@ -86,7 +88,6 @@ public class Household {
         this.dcyf_contact_email = builder().dcyf_contact_email;
         this.dcyf_contact_phone_number = builder().dcyf_contact_phone_number;
         this.section_8_voucher_lost = builder().section_8_voucher_lost;
-        this.created_at = builder().created_at;
     }
 
     public BigInteger getId() { return id; }
