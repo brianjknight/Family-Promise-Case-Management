@@ -9,6 +9,7 @@ import javax.persistence.Table;
 import java.math.BigInteger;
 import java.util.Objects;
 
+// TODO should we allow the id & created_at attributes to have setters? I assume these are auto generated and should not be changed.
 /**
  * Postgresql table for households entity.
  */
@@ -49,7 +50,7 @@ public class Household {
     @Column(name = "cps_involvement")
     private Boolean cps_involvement;
     @Column(name = "cps_involvement_active")
-    private String cps_involvement_active;
+    private Boolean cps_involvement_active;
     @Column(name = "dcyf_contact_name")
     private String dcyf_contact_name;
     @Column(name = "dcyf_contact_email")
@@ -168,8 +169,8 @@ public class Household {
         this.cps_involvement = cps_involvement;
     }
 
-    public String getCps_involvement_active() { return cps_involvement_active; }
-    public void setCps_involvement_active(String cps_involvement_active) {
+    public Boolean isCps_involvement_active() { return cps_involvement_active; }
+    public void setCps_involvement_active(Boolean cps_involvement_active) {
         this.cps_involvement_active = cps_involvement_active;
     }
 
@@ -203,31 +204,34 @@ public class Household {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Household household = (Household) o;
-        return times_homeless_in_three_years == household.times_homeless_in_three_years
-                && total_time_homeless_three_years == household.total_time_homeless_three_years
-                && total_time_homeless_past_year == household.total_time_homeless_past_year
-                && previously_living_in_non_human_habitation == household.previously_living_in_non_human_habitation
-                && previously_living_in_emergency_shelter == household.previously_living_in_emergency_shelter
-                && previously_unsheltered == household.previously_unsheltered && previous_stay_length == household.previous_stay_length
-                && needs_interpreter == household.needs_interpreter
-                && access_to_private_transportation == household.access_to_private_transportation
-                && cps_involvement == household.cps_involvement
-                && section_8_voucher_lost == household.section_8_voucher_lost
-                && Objects.equals(id, household.id)
+        return Objects.equals(id, household.id)
                 && Objects.equals(name, household.name)
+                && Objects.equals(times_homeless_in_three_years, household.times_homeless_in_three_years)
+                && Objects.equals(total_time_homeless_three_years, household.total_time_homeless_three_years)
+                && Objects.equals(total_time_homeless_past_year, household.total_time_homeless_past_year)
+                && Objects.equals(previously_living_in_non_human_habitation, household.previously_living_in_non_human_habitation)
+                && Objects.equals(previously_living_in_emergency_shelter, household.previously_living_in_emergency_shelter)
+                && Objects.equals(previously_unsheltered, household.previously_unsheltered)
+                && Objects.equals(previous_stay_length, household.previous_stay_length)
+                && Objects.equals(needs_interpreter, household.needs_interpreter)
+                && Objects.equals(access_to_private_transportation, household.access_to_private_transportation)
                 && Objects.equals(client_or_family_physical_illness_history, household.client_or_family_physical_illness_history)
                 && Objects.equals(client_or_family_mental_illness_history, household.client_or_family_mental_illness_history)
                 && Objects.equals(client_or_family_personal_violence_history, household.client_or_family_personal_violence_history)
                 && Objects.equals(client_or_family_substance_dependency_history, household.client_or_family_substance_dependency_history)
-                && Objects.equals(cps_involvement_active, household.cps_involvement_active) && Objects.equals(dcyf_contact_name, household.dcyf_contact_name)
+                && Objects.equals(cps_involvement, household.cps_involvement)
+                && Objects.equals(cps_involvement_active, household.cps_involvement_active)
+                && Objects.equals(dcyf_contact_name, household.dcyf_contact_name)
                 && Objects.equals(dcyf_contact_email, household.dcyf_contact_email)
                 && Objects.equals(dcyf_contact_phone_number, household.dcyf_contact_phone_number)
+                && Objects.equals(section_8_voucher_lost, household.section_8_voucher_lost)
                 && Objects.equals(created_at, household.created_at);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id,
+        return Objects.hash(
+                id,
                 name,
                 times_homeless_in_three_years,
                 total_time_homeless_three_years,
@@ -270,7 +274,7 @@ public class Household {
                 ", client_or_family_personal_violence_history='" + client_or_family_personal_violence_history + '\'' +
                 ", client_or_family_substance_dependency_history='" + client_or_family_substance_dependency_history + '\'' +
                 ", cps_involvement=" + cps_involvement +
-                ", cps_involvement_active='" + cps_involvement_active + '\'' +
+                ", cps_involvement_active=" + cps_involvement_active +
                 ", dcyf_contact_name='" + dcyf_contact_name + '\'' +
                 ", dcyf_contact_email='" + dcyf_contact_email + '\'' +
                 ", dcyf_contact_phone_number='" + dcyf_contact_phone_number + '\'' +
@@ -300,7 +304,7 @@ public class Household {
         private String client_or_family_personal_violence_history;
         private String client_or_family_substance_dependency_history;
         private Boolean cps_involvement;
-        private String cps_involvement_active;
+        private Boolean cps_involvement_active;
         private String dcyf_contact_name;
         private String dcyf_contact_email;
         private String dcyf_contact_phone_number;
@@ -389,7 +393,7 @@ public class Household {
             return this;
         }
 
-        public HouseholdBuilder withCps_involvement_active(String cps_involvement_active) {
+        public HouseholdBuilder withCps_involvement_active(Boolean cps_involvement_active) {
             this.cps_involvement_active = cps_involvement_active;
             return this;
         }
