@@ -38,3 +38,4 @@ out/
 
 ### application dev projects ###
 application-dev.properties
+data/pg
