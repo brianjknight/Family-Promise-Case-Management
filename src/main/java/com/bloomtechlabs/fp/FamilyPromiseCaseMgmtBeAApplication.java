@@ -11,7 +11,7 @@ public class FamilyPromiseCaseMgmtBeAApplication {
 			SpringApplication.run(FamilyPromiseCaseMgmtBeAApplication.class, args);
 		} catch (Exception e) {
 			e.printStackTrace();
+			System.out.println("Error---> " + e.getMessage());
 		}
-//		SpringApplication.run(FamilyPromiseCaseMgmtBeAApplication.class, args);
 	}
 }
