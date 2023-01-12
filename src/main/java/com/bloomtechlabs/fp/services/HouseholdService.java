@@ -19,6 +19,7 @@ public class HouseholdService {
         return householdRepository.findAll();
     }
 
+    // TODO Exception handling for non-existing id.
     public Optional<Household> findHouseholdById(BigInteger id) {
         return householdRepository.findById(id);
     }
@@ -27,7 +28,7 @@ public class HouseholdService {
         return householdRepository.save(household);
     }
 
-    public Household editHousehold(BigInteger id, Household household) {
+    public Household editHouseholdById(BigInteger id, Household household) {
         Optional<Household> householdOpt = findHouseholdById(id);
         Household householdToEdit = householdOpt.get();
 
@@ -54,7 +55,7 @@ public class HouseholdService {
 
         return saveHousehold(householdToEdit);
     }
-
+    // TODO Exception handling for non-existing id.
     public void deleteHouseholdById(BigInteger id) {
         householdRepository.deleteById(id);
     }
