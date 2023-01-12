@@ -15,20 +15,20 @@ public class HouseholdService {
     @Autowired
     private HouseholdRepository householdRepository;
 
-    public List<Household> findAll() {
+    public List<Household> findAllHouseholds() {
         return householdRepository.findAll();
     }
 
-    public Optional<Household> findById(BigInteger id) {
+    public Optional<Household> findHouseholdById(BigInteger id) {
         return householdRepository.findById(id);
     }
 
-    public Household save(Household household) {
+    public Household saveHousehold(Household household) {
         return householdRepository.save(household);
     }
 
     public Household editHousehold(BigInteger id, Household household) {
-        Optional<Household> householdOpt = findById(id);
+        Optional<Household> householdOpt = findHouseholdById(id);
         Household householdToEdit = householdOpt.get();
 
         householdToEdit.setName(household.getName());
@@ -52,6 +52,10 @@ public class HouseholdService {
         householdToEdit.setDcyf_contact_phone_number(household.getDcyf_contact_phone_number());
         householdToEdit.setSection_8_voucher_lost(household.isSection_8_voucher_lost());
 
-        return save(householdToEdit);
+        return saveHousehold(householdToEdit);
+    }
+
+    public void deleteHouseholdById(BigInteger id) {
+        householdRepository.deleteById(id);
     }
 }
