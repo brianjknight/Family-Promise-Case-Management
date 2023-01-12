@@ -192,7 +192,7 @@ public class Household {
         this.section_8_voucher_lost = section_8_voucher_lost;
     }
 
-    public String getCreated_at() { return created_at; }
+    public LocalDateTime getCreated_at() { return created_at; }
 
     @Override
     public boolean equals(Object o) {
