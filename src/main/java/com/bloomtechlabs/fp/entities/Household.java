@@ -90,9 +90,6 @@ public class Household {
     }
 
     public BigInteger getId() { return id; }
-    public void setId(BigInteger id) {
-        this.id = id;
-    }
 
     public String getName() { return name; }
     public void setName(String name) {
@@ -195,9 +192,6 @@ public class Household {
     }
 
     public String getCreated_at() { return created_at; }
-    public void setCreated_at(String created_at) {
-        this.created_at = created_at;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -288,7 +282,6 @@ public class Household {
     }
 
     public static class HouseholdBuilder {
-        private BigInteger id;
         private String name;
         private Integer times_homeless_in_three_years;
         private Integer total_time_homeless_three_years;
@@ -309,14 +302,8 @@ public class Household {
         private String dcyf_contact_email;
         private String dcyf_contact_phone_number;
         private Boolean section_8_voucher_lost;
-        private String created_at;
 
         private HouseholdBuilder() {}
-
-        public HouseholdBuilder withId(BigInteger id) {
-            this.id = id;
-            return this;
-        }
 
         public HouseholdBuilder withName(String name) {
             this.name = name;
@@ -415,11 +402,6 @@ public class Household {
 
         public HouseholdBuilder withSection_8_voucher_lost(Boolean section_8_voucher_lost) {
             this.section_8_voucher_lost = section_8_voucher_lost;
-            return this;
-        }
-
-        public HouseholdBuilder withCreated_at(String created_at) {
-            this.created_at = created_at;
             return this;
         }
 
