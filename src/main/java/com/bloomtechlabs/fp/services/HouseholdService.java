@@ -1,13 +1,15 @@
 package com.bloomtechlabs.fp.services;
 
 import com.bloomtechlabs.fp.entities.Household;
+import com.bloomtechlabs.fp.exceptions.ResourceNotFoundException;
 import com.bloomtechlabs.fp.repositories.HouseholdRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.math.BigInteger;
 import java.util.List;
-import java.util.Optional;
+import java.util.Objects;
 
 @Service
 public class HouseholdService {
@@ -19,20 +21,29 @@ public class HouseholdService {
         return householdRepository.findAll();
     }
 
-    // TODO Exception handling for non-existing id. IllegalArgumentException?
-    public Optional<Household> findHouseholdById(BigInteger id) {
-        return householdRepository.findById(id);
+    public ResponseEntity<Household> getHouseholdById(BigInteger id) {
+        Household household = findHouseholdById(id);
+
+        return ResponseEntity.ok(household);
     }
 
-    // TODO Exception handling for null input.
+    private Household findHouseholdById(BigInteger id) {
+        return householdRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Household does not exist for Id: " + id.toString()));
+    }
+
     public Household saveHousehold(Household household) {
+        if (Objects.isNull(household)) {
+            throw new IllegalArgumentException("Household input cannot be null");
+        }
         return householdRepository.save(household);
     }
 
-    // TODO Exception handling for null input. Check for null return in optional.
     public Household editHouseholdById(BigInteger id, Household household) {
-        Optional<Household> householdOpt = findHouseholdById(id);
-        Household householdToEdit = householdOpt.get();
+        if (Objects.isNull(household)) {
+            throw new IllegalArgumentException("Household input cannot be null");
+        }
+        Household householdToEdit = findHouseholdById(id);
 
         householdToEdit.setName(household.getName());
         householdToEdit.setTimesHomelessInThreeYears(household.getTimesHomelessInThreeYears());
@@ -57,9 +68,12 @@ public class HouseholdService {
 
         return saveHousehold(householdToEdit);
     }
-    // TODO Exception handling for non-existing id.
-    public void deleteHouseholdById(BigInteger id) {
-        householdRepository.deleteById(id);
+
+    public ResponseEntity<String> deleteHouseholdById(BigInteger id) {
+        Household householdToDelete = findHouseholdById(id);
+        householdRepository.delete(householdToDelete);
+
+        return ResponseEntity.ok("Successfully deleted Household ID: " + id);
     }
 
     public long count() {

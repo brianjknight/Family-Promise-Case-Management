@@ -29,11 +29,9 @@ public class HouseholdController {
         return householdService.findAllHouseholds();
     }
 
-    // TODO exception handling for Optional
     @GetMapping("{id}")
-    public ResponseEntity<Household> findHouseholdById(@PathVariable BigInteger id) {
-        Optional<Household> householdOptional = householdService.findHouseholdById(id);
-        return ResponseEntity.ok(householdOptional.get());
+    public ResponseEntity<Household> getHouseholdById(@PathVariable BigInteger id) {
+        return householdService.getHouseholdById(id);
     }
 
     @PostMapping
@@ -46,9 +44,8 @@ public class HouseholdController {
         return ResponseEntity.ok(householdService.editHouseholdById(id, household));
     }
 
-    // TODO should this return a confirmation message of successful deletion?
     @DeleteMapping("{id}")
-    public void deleteHouseholdById(@PathVariable BigInteger id) {
-        householdService.deleteHouseholdById(id);
+    public ResponseEntity<String> deleteHouseholdById(@PathVariable BigInteger id) {
+        return householdService.deleteHouseholdById(id);
     }
 }
