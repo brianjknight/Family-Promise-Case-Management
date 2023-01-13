@@ -2,16 +2,19 @@ package com.bloomtechlabs.fp.entities;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.UUID;
 
 @Entity
 @Table(name ="education_histories")
 public class EducationHistory {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="id", insertable = false, updatable = false, nullable = false)
+    private UUID id;
 
     @Column(name = "client_id")
-    private Long clientId;
+    private UUID clientId;
 
     @Column(name = "school_name")
     private String schoolName;
@@ -30,7 +33,7 @@ public class EducationHistory {
     public EducationHistory() {
     }
 
-    public EducationHistory(Long clientId, String schoolName, String level, Date startDate, Date endDate) {
+    public EducationHistory(UUID clientId, String schoolName, String level, Date startDate, Date endDate) {
         this.clientId   = clientId;
         this.schoolName = schoolName;
         this.level      = level;
@@ -38,15 +41,15 @@ public class EducationHistory {
         this.endDate    = endDate;
     }
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public Long getClientId() {
+    public UUID getClientId() {
         return clientId;
     }
 
-    public void setClientId(Long clientId) {
+    public void setClientId(UUID clientId) {
         this.clientId = clientId;
     }
 

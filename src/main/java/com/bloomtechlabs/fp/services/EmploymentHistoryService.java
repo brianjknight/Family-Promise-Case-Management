@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class EmploymentHistoryService {
@@ -23,13 +24,13 @@ public class EmploymentHistoryService {
         return employmentHistoryRepository.save(employmentHistory);
     }
 
-    public ResponseEntity<EmploymentHistory> getEmploymentHistoryById(Long id) {
+    public ResponseEntity<EmploymentHistory> getEmploymentHistoryById(UUID id) {
         EmploymentHistory employmentHistory = findEmploymentHistoryById(id);
 
         return ResponseEntity.ok(employmentHistory);
     }
 
-    public ResponseEntity<EmploymentHistory> updateEmploymentHistory(Long id, EmploymentHistory employmentHistoryDetails) {
+    public ResponseEntity<EmploymentHistory> updateEmploymentHistory(UUID id, EmploymentHistory employmentHistoryDetails) {
         EmploymentHistory employmentHistory = findEmploymentHistoryById(id);
 
         employmentHistory.setClientId(            employmentHistoryDetails.getClientId());
@@ -40,7 +41,7 @@ public class EmploymentHistoryService {
         return ResponseEntity.ok(updatedEmploymentHistory);
     }
 
-    public ResponseEntity<String> deleteEmploymentHistory(Long id) {
+    public ResponseEntity<String> deleteEmploymentHistory(UUID id) {
         EmploymentHistory employmentHistory = findEmploymentHistoryById(id);
 
         employmentHistoryRepository.delete(employmentHistory);
@@ -52,8 +53,8 @@ public class EmploymentHistoryService {
         return employmentHistoryRepository.count();
     }
 
-    private EmploymentHistory findEmploymentHistoryById(Long id) {
-        return employmentHistoryRepository.findById(id)
+    private EmploymentHistory findEmploymentHistoryById(UUID id) {
+        return employmentHistoryRepository.findById(id.getMostSignificantBits())
                 .orElseThrow(() -> new ResourceNotFoundException("EmploymentHistory Does Not Exist with this Id: " + id));
 
     }

@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/education_histories")
@@ -26,18 +27,18 @@ public class EducationHistoryController {
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<EducationHistory> getEducationHistory(@PathVariable Long id) {
+    public ResponseEntity<EducationHistory> getEducationHistory(@PathVariable UUID id) {
         return educationHistoryService.getEducationHistoryById(id);
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<EducationHistory> updateEducationHistory(@PathVariable Long id,
+    public ResponseEntity<EducationHistory> updateEducationHistory(@PathVariable UUID id,
                                                                    @RequestBody EducationHistory educationHistory) {
         return educationHistoryService.updateEducationHistory(id,educationHistory);
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<String> deleteEducationHistory(@PathVariable Long id) {
+    public ResponseEntity<String> deleteEducationHistory(@PathVariable UUID id) {
         return educationHistoryService.deleteEducationHistory(id);
     }
 }

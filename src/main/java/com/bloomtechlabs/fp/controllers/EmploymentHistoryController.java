@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/employment_histories")
@@ -26,18 +27,18 @@ public class EmploymentHistoryController {
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<EmploymentHistory> getEmploymentHistoryById(@PathVariable Long id) {
+    public ResponseEntity<EmploymentHistory> getEmploymentHistoryById(@PathVariable UUID id) {
         return employmentHistoryService.getEmploymentHistoryById(id);
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<EmploymentHistory> updateEmploymentHistory(@PathVariable Long id,
+    public ResponseEntity<EmploymentHistory> updateEmploymentHistory(@PathVariable UUID id,
                                                                      @RequestBody EmploymentHistory employmentHistory) {
         return employmentHistoryService.updateEmploymentHistory(id, employmentHistory);
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<String> deleteEmploymentHistory(@PathVariable Long id) {
+    public ResponseEntity<String> deleteEmploymentHistory(@PathVariable UUID id) {
         return employmentHistoryService.deleteEmploymentHistory(id);
     }
 }

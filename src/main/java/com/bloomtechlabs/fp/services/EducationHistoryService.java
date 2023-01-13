@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class EducationHistoryService {
@@ -22,13 +23,13 @@ public class EducationHistoryService {
         return educationHistoryRepository.save(educationHistory);
     }
 
-    public ResponseEntity<EducationHistory> getEducationHistoryById(Long id) {
+    public ResponseEntity<EducationHistory> getEducationHistoryById(UUID id) {
         EducationHistory educationHistory = findEducationHistoryById(id);
 
         return ResponseEntity.ok(educationHistory);
     }
 
-    public ResponseEntity<EducationHistory> updateEducationHistory(Long id, EducationHistory educationHistoryDetails) {
+    public ResponseEntity<EducationHistory> updateEducationHistory(UUID id, EducationHistory educationHistoryDetails) {
         EducationHistory educationHistory = findEducationHistoryById(id);
 
         educationHistory.setClientId(   educationHistoryDetails.getClientId());
@@ -41,7 +42,7 @@ public class EducationHistoryService {
         return ResponseEntity.ok(updatedEducationHistory);
     }
 
-    public ResponseEntity<String> deleteEducationHistory(Long id) {
+    public ResponseEntity<String> deleteEducationHistory(UUID id) {
         EducationHistory educationHistory = findEducationHistoryById(id);
 
         educationHistoryRepository.delete(educationHistory);
@@ -53,9 +54,8 @@ public class EducationHistoryService {
         return educationHistoryRepository.count();
     }
 
-    private EducationHistory findEducationHistoryById(Long id) {
-        return educationHistoryRepository.findById(id)
+    private EducationHistory findEducationHistoryById(UUID id) {
+        return educationHistoryRepository.findById(id.getMostSignificantBits())
                 .orElseThrow(() -> new ResourceNotFoundException("EducationHistory Does Not Exist with this Id: " + id));
-
     }
 }
