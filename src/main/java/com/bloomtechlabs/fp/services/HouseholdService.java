@@ -27,11 +27,6 @@ public class HouseholdService {
         return ResponseEntity.ok(household);
     }
 
-    private Household findHouseholdById(BigInteger id) {
-        return householdRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Household does not exist for Id: " + id.toString()));
-    }
-
     public Household saveHousehold(Household household) {
         if (Objects.isNull(household)) {
             throw new IllegalArgumentException("Household input cannot be null");
@@ -78,5 +73,10 @@ public class HouseholdService {
 
     public long count() {
         return householdRepository.count();
+    }
+
+    private Household findHouseholdById(BigInteger id) {
+        return householdRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Household does not exist for Id: " + id.toString()));
     }
 }
