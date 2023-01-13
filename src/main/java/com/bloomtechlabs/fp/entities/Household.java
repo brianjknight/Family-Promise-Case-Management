@@ -25,69 +25,69 @@ public class Household {
     @Column(name = "name")
     private String name;
     @Column(name = "times_homeless_in_three_years")
-    private Integer times_homeless_in_three_years;
+    private Integer timesHomelessInThreeYears;
     @Column(name = "total_time_homeless_three_years")
-    private Integer total_time_homeless_three_years;
+    private Integer totalTimeHomelessThreeYears;
     @Column(name = "total_time_homeless_past_year")
-    private Integer total_time_homeless_past_year;
+    private Integer totalTimeHomelessPastYear;
     @Column(name = "previously_living_in_non_human_habitation")
-    private Boolean previously_living_in_non_human_habitation;
+    private Boolean previouslyLivingInNonHumanHabitation;
     @Column(name = "previously_living_in_emergency_shelter")
-    private Boolean previously_living_in_emergency_shelter;
+    private Boolean previouslyLivingInEmergencyShelter;
     @Column(name = "previously_unsheltered")
-    private Boolean previously_unsheltered;
+    private Boolean previouslyUnsheltered;
     @Column(name = "previous_stay_length")
-    private Integer previous_stay_length;
+    private Integer previousStayLength;
     @Column(name = "needs_interpreter")
-    private Boolean needs_interpreter;
+    private Boolean needsInterpreter;
     @Column(name = "access_to_private_transportation")
-    private Boolean access_to_private_transportation;
+    private Boolean accessToPrivateTransportation;
     @Column(name = "client_or_family_physical_illness_history")
-    private String client_or_family_physical_illness_history;
+    private String clientOrFamilyPhysicalIllnessHistory;
     @Column(name = "client_or_family_mental_illness_history")
-    private String client_or_family_mental_illness_history;
+    private String clientOrFamilyMentalIllnessHistory;
     @Column(name = "client_or_family_personal_violence_history")
-    private String client_or_family_personal_violence_history;
+    private String clientOrFamilyPersonalViolenceHistory;
     @Column(name = "client_or_family_substance_dependency_history ")
-    private String client_or_family_substance_dependency_history;
+    private String clientOrFamilySubstanceDependencyHistory;
     @Column(name = "cps_involvement")
-    private Boolean cps_involvement;
+    private Boolean cpsInvolvement;
     @Column(name = "cps_involvement_active")
-    private Boolean cps_involvement_active;
+    private Boolean cpsInvolvementActive;
     @Column(name = "dcyf_contact_name")
-    private String dcyf_contact_name;
+    private String dcyfContactName;
     @Column(name = "dcyf_contact_email")
-    private String dcyf_contact_email;
+    private String dcyfContactEmail;
     @Column(name = "dcyf_contact_phone_number")
-    private String dcyf_contact_phone_number;
+    private String dcyfContactPhoneNumber;
     @Column(name = "section_8_voucher_lost")
-    private Boolean section_8_voucher_lost;
+    private Boolean section8VoucherLost;
     @CreationTimestamp
-    private LocalDateTime created_at;
+    private LocalDateTime createdAt;
 
     public Household() {}
 
     private Household(HouseholdBuilder builder) {
         this.name = builder.name;
-        this.times_homeless_in_three_years = builder().times_homeless_in_three_years;
-        this.total_time_homeless_three_years = builder().total_time_homeless_three_years;
-        this.total_time_homeless_past_year = builder().total_time_homeless_past_year;
-        this.previously_living_in_non_human_habitation = builder().previously_living_in_non_human_habitation;
-        this.previously_living_in_emergency_shelter = builder().previously_living_in_emergency_shelter;
-        this.previously_unsheltered = builder().previously_unsheltered;
-        this.previous_stay_length = builder().previous_stay_length;
-        this.needs_interpreter = builder().needs_interpreter;
-        this.access_to_private_transportation = builder().access_to_private_transportation;
-        this.client_or_family_physical_illness_history = builder().client_or_family_physical_illness_history;
-        this.client_or_family_mental_illness_history = builder().client_or_family_mental_illness_history;
-        this.client_or_family_personal_violence_history = builder().client_or_family_personal_violence_history;
-        this.client_or_family_substance_dependency_history = builder().client_or_family_substance_dependency_history;
-        this.cps_involvement = builder().cps_involvement;
-        this.cps_involvement_active = builder().cps_involvement_active;
-        this.dcyf_contact_name = builder().dcyf_contact_name;
-        this.dcyf_contact_email = builder().dcyf_contact_email;
-        this.dcyf_contact_phone_number = builder().dcyf_contact_phone_number;
-        this.section_8_voucher_lost = builder().section_8_voucher_lost;
+        this.timesHomelessInThreeYears = builder().timesHomelessInThreeYears;
+        this.totalTimeHomelessThreeYears = builder().totalTimeHomelessThreeYears;
+        this.totalTimeHomelessPastYear = builder().totalTimeHomelessPastYear;
+        this.previouslyLivingInNonHumanHabitation = builder().previouslyLivingInNonHumanHabitation;
+        this.previouslyLivingInEmergencyShelter = builder().previouslyLivingInEmergencyShelter;
+        this.previouslyUnsheltered = builder().previouslyUnsheltered;
+        this.previousStayLength = builder().previousStayLength;
+        this.needsInterpreter = builder().needsInterpreter;
+        this.accessToPrivateTransportation = builder().accessToPrivateTransportation;
+        this.clientOrFamilyPhysicalIllnessHistory = builder().clientOrFamilyPhysicalIllnessHistory;
+        this.clientOrFamilyMentalIllnessHistory = builder().clientOrFamilyMentalIllnessHistory;
+        this.clientOrFamilyPersonalViolenceHistory = builder().clientOrFamilyPersonalViolenceHistory;
+        this.clientOrFamilySubstanceDependencyHistory = builder().clientOrFamilySubstanceDependencyHistory;
+        this.cpsInvolvement = builder().cpsInvolvement;
+        this.cpsInvolvementActive = builder().cpsInvolvementActive;
+        this.dcyfContactName = builder().dcyfContactName;
+        this.dcyfContactEmail = builder().dcyfContactEmail;
+        this.dcyfContactPhoneNumber = builder().dcyfContactPhoneNumber;
+        this.section8VoucherLost = builder().section8VoucherLost;
     }
 
     public BigInteger getId() { return id; }
@@ -97,102 +97,102 @@ public class Household {
         this.name = name;
     }
 
-    public Integer getTimes_homeless_in_three_years() { return times_homeless_in_three_years; }
-    public void setTimes_homeless_in_three_years(Integer times_homeless_in_three_years) {
-        this.times_homeless_in_three_years = times_homeless_in_three_years;
+    public Integer getTimesHomelessInThreeYears() { return timesHomelessInThreeYears; }
+    public void setTimesHomelessInThreeYears(Integer timesHomelessInThreeYears) {
+        this.timesHomelessInThreeYears = timesHomelessInThreeYears;
     }
 
-    public Integer getTotal_time_homeless_three_years() { return total_time_homeless_three_years; }
-    public void setTotal_time_homeless_three_years(Integer total_time_homeless_three_years) {
-        this.total_time_homeless_three_years = total_time_homeless_three_years;
+    public Integer getTotalTimeHomelessThreeYears() { return totalTimeHomelessThreeYears; }
+    public void setTotalTimeHomelessThreeYears(Integer totalTimeHomelessThreeYears) {
+        this.totalTimeHomelessThreeYears = totalTimeHomelessThreeYears;
     }
 
-    public Integer getTotal_time_homeless_past_year() { return total_time_homeless_past_year; }
-    public void setTotal_time_homeless_past_year(Integer total_time_homeless_past_year) {
-        this.total_time_homeless_past_year = total_time_homeless_past_year;
+    public Integer getTotalTimeHomelessPastYear() { return totalTimeHomelessPastYear; }
+    public void setTotalTimeHomelessPastYear(Integer totalTimeHomelessPastYear) {
+        this.totalTimeHomelessPastYear = totalTimeHomelessPastYear;
     }
 
-    public Boolean isPreviously_living_in_non_human_habitation() { return previously_living_in_non_human_habitation; }
-    public void setPreviously_living_in_non_human_habitation(Boolean previously_living_in_non_human_habitation) {
-        this.previously_living_in_non_human_habitation = previously_living_in_non_human_habitation;
+    public Boolean isPreviously_living_in_non_human_habitation() { return previouslyLivingInNonHumanHabitation; }
+    public void setPreviouslyLivingInNonHumanHabitation(Boolean previouslyLivingInNonHumanHabitation) {
+        this.previouslyLivingInNonHumanHabitation = previouslyLivingInNonHumanHabitation;
     }
 
-    public Boolean isPreviously_living_in_emergency_shelter() { return previously_living_in_emergency_shelter; }
-    public void setPreviously_living_in_emergency_shelter(Boolean previously_living_in_emergency_shelter) {
-        this.previously_living_in_emergency_shelter = previously_living_in_emergency_shelter;
+    public Boolean isPreviously_living_in_emergency_shelter() { return previouslyLivingInEmergencyShelter; }
+    public void setPreviouslyLivingInEmergencyShelter(Boolean previouslyLivingInEmergencyShelter) {
+        this.previouslyLivingInEmergencyShelter = previouslyLivingInEmergencyShelter;
     }
 
-    public Boolean isPreviously_unsheltered() { return previously_unsheltered; }
-    public void setPreviously_unsheltered(Boolean previously_unsheltered) {
-        this.previously_unsheltered = previously_unsheltered;
+    public Boolean isPreviously_unsheltered() { return previouslyUnsheltered; }
+    public void setPreviouslyUnsheltered(Boolean previouslyUnsheltered) {
+        this.previouslyUnsheltered = previouslyUnsheltered;
     }
 
-    public Integer getPrevious_stay_length() { return previous_stay_length; }
-    public void setPrevious_stay_length(Integer previous_stay_length) {
-        this.previous_stay_length = previous_stay_length;
+    public Integer getPreviousStayLength() { return previousStayLength; }
+    public void setPreviousStayLength(Integer previousStayLength) {
+        this.previousStayLength = previousStayLength;
     }
 
-    public Boolean isNeeds_interpreter() { return needs_interpreter; }
-    public void setNeeds_interpreter(Boolean needs_interpreter) {
-        this.needs_interpreter = needs_interpreter;
+    public Boolean isNeeds_interpreter() { return needsInterpreter; }
+    public void setNeedsInterpreter(Boolean needsInterpreter) {
+        this.needsInterpreter = needsInterpreter;
     }
 
-    public Boolean isAccess_to_private_transportation() { return access_to_private_transportation; }
-    public void setAccess_to_private_transportation(Boolean access_to_private_transportation) {
-        this.access_to_private_transportation = access_to_private_transportation;
+    public Boolean isAccess_to_private_transportation() { return accessToPrivateTransportation; }
+    public void setAccessToPrivateTransportation(Boolean accessToPrivateTransportation) {
+        this.accessToPrivateTransportation = accessToPrivateTransportation;
     }
 
-    public String getClient_or_family_physical_illness_history() { return client_or_family_physical_illness_history; }
-    public void setClient_or_family_physical_illness_history(String client_or_family_physical_illness_history) {
-        this.client_or_family_physical_illness_history = client_or_family_physical_illness_history;
+    public String getClientOrFamilyPhysicalIllnessHistory() { return clientOrFamilyPhysicalIllnessHistory; }
+    public void setClientOrFamilyPhysicalIllnessHistory(String clientOrFamilyPhysicalIllnessHistory) {
+        this.clientOrFamilyPhysicalIllnessHistory = clientOrFamilyPhysicalIllnessHistory;
     }
 
-    public String getClient_or_family_mental_illness_history() { return client_or_family_mental_illness_history; }
-    public void setClient_or_family_mental_illness_history(String client_or_family_mental_illness_history) {
-        this.client_or_family_mental_illness_history = client_or_family_mental_illness_history;
+    public String getClientOrFamilyMentalIllnessHistory() { return clientOrFamilyMentalIllnessHistory; }
+    public void setClientOrFamilyMentalIllnessHistory(String clientOrFamilyMentalIllnessHistory) {
+        this.clientOrFamilyMentalIllnessHistory = clientOrFamilyMentalIllnessHistory;
     }
 
-    public String getClient_or_family_personal_violence_history() { return client_or_family_personal_violence_history; }
-    public void setClient_or_family_personal_violence_history(String client_or_family_personal_violence_history) {
-        this.client_or_family_personal_violence_history = client_or_family_personal_violence_history;
+    public String getClientOrFamilyPersonalViolenceHistory() { return clientOrFamilyPersonalViolenceHistory; }
+    public void setClientOrFamilyPersonalViolenceHistory(String clientOrFamilyPersonalViolenceHistory) {
+        this.clientOrFamilyPersonalViolenceHistory = clientOrFamilyPersonalViolenceHistory;
     }
 
-    public String getClient_or_family_substance_dependency_history() { return client_or_family_substance_dependency_history; }
-    public void setClient_or_family_substance_dependency_history(String client_or_family_substance_dependency_history) {
-        this.client_or_family_substance_dependency_history = client_or_family_substance_dependency_history;
+    public String getClientOrFamilySubstanceDependencyHistory() { return clientOrFamilySubstanceDependencyHistory; }
+    public void setClientOrFamilySubstanceDependencyHistory(String clientOrFamilySubstanceDependencyHistory) {
+        this.clientOrFamilySubstanceDependencyHistory = clientOrFamilySubstanceDependencyHistory;
     }
 
-    public Boolean isCps_involvement() { return cps_involvement; }
-    public void setCps_involvement(Boolean cps_involvement) {
-        this.cps_involvement = cps_involvement;
+    public Boolean isCps_involvement() { return cpsInvolvement; }
+    public void setCpsInvolvement(Boolean cpsInvolvement) {
+        this.cpsInvolvement = cpsInvolvement;
     }
 
-    public Boolean isCps_involvement_active() { return cps_involvement_active; }
-    public void setCps_involvement_active(Boolean cps_involvement_active) {
-        this.cps_involvement_active = cps_involvement_active;
+    public Boolean isCps_involvement_active() { return cpsInvolvementActive; }
+    public void setCpsInvolvementActive(Boolean cpsInvolvementActive) {
+        this.cpsInvolvementActive = cpsInvolvementActive;
     }
 
-    public String getDcyf_contact_name() { return dcyf_contact_name; }
-    public void setDcyf_contact_name(String dcyf_contact_name) {
-        this.dcyf_contact_name = dcyf_contact_name;
+    public String getDcyfContactName() { return dcyfContactName; }
+    public void setDcyfContactName(String dcyfContactName) {
+        this.dcyfContactName = dcyfContactName;
     }
 
-    public String getDcyf_contact_email() { return dcyf_contact_email; }
-    public void setDcyf_contact_email(String dcyf_contact_email) {
-        this.dcyf_contact_email = dcyf_contact_email;
+    public String getDcyfContactEmail() { return dcyfContactEmail; }
+    public void setDcyfContactEmail(String dcyfContactEmail) {
+        this.dcyfContactEmail = dcyfContactEmail;
     }
 
-    public String getDcyf_contact_phone_number() { return dcyf_contact_phone_number; }
-    public void setDcyf_contact_phone_number(String dcyf_contact_phone_number) {
-        this.dcyf_contact_phone_number = dcyf_contact_phone_number;
+    public String getDcyfContactPhoneNumber() { return dcyfContactPhoneNumber; }
+    public void setDcyfContactPhoneNumber(String dcyfContactPhoneNumber) {
+        this.dcyfContactPhoneNumber = dcyfContactPhoneNumber;
     }
 
-    public Boolean isSection_8_voucher_lost() { return section_8_voucher_lost; }
-    public void setSection_8_voucher_lost(Boolean section_8_voucher_lost) {
-        this.section_8_voucher_lost = section_8_voucher_lost;
+    public Boolean isSection_8_voucher_lost() { return section8VoucherLost; }
+    public void setSection8VoucherLost(Boolean section8VoucherLost) {
+        this.section8VoucherLost = section8VoucherLost;
     }
 
-    public LocalDateTime getCreated_at() { return created_at; }
+    public LocalDateTime getCreatedAt() { return createdAt; }
 
     @Override
     public boolean equals(Object o) {
@@ -201,26 +201,26 @@ public class Household {
         Household household = (Household) o;
         return Objects.equals(id, household.id)
                 && Objects.equals(name, household.name)
-                && Objects.equals(times_homeless_in_three_years, household.times_homeless_in_three_years)
-                && Objects.equals(total_time_homeless_three_years, household.total_time_homeless_three_years)
-                && Objects.equals(total_time_homeless_past_year, household.total_time_homeless_past_year)
-                && Objects.equals(previously_living_in_non_human_habitation, household.previously_living_in_non_human_habitation)
-                && Objects.equals(previously_living_in_emergency_shelter, household.previously_living_in_emergency_shelter)
-                && Objects.equals(previously_unsheltered, household.previously_unsheltered)
-                && Objects.equals(previous_stay_length, household.previous_stay_length)
-                && Objects.equals(needs_interpreter, household.needs_interpreter)
-                && Objects.equals(access_to_private_transportation, household.access_to_private_transportation)
-                && Objects.equals(client_or_family_physical_illness_history, household.client_or_family_physical_illness_history)
-                && Objects.equals(client_or_family_mental_illness_history, household.client_or_family_mental_illness_history)
-                && Objects.equals(client_or_family_personal_violence_history, household.client_or_family_personal_violence_history)
-                && Objects.equals(client_or_family_substance_dependency_history, household.client_or_family_substance_dependency_history)
-                && Objects.equals(cps_involvement, household.cps_involvement)
-                && Objects.equals(cps_involvement_active, household.cps_involvement_active)
-                && Objects.equals(dcyf_contact_name, household.dcyf_contact_name)
-                && Objects.equals(dcyf_contact_email, household.dcyf_contact_email)
-                && Objects.equals(dcyf_contact_phone_number, household.dcyf_contact_phone_number)
-                && Objects.equals(section_8_voucher_lost, household.section_8_voucher_lost)
-                && Objects.equals(created_at, household.created_at);
+                && Objects.equals(timesHomelessInThreeYears, household.timesHomelessInThreeYears)
+                && Objects.equals(totalTimeHomelessThreeYears, household.totalTimeHomelessThreeYears)
+                && Objects.equals(totalTimeHomelessPastYear, household.totalTimeHomelessPastYear)
+                && Objects.equals(previouslyLivingInNonHumanHabitation, household.previouslyLivingInNonHumanHabitation)
+                && Objects.equals(previouslyLivingInEmergencyShelter, household.previouslyLivingInEmergencyShelter)
+                && Objects.equals(previouslyUnsheltered, household.previouslyUnsheltered)
+                && Objects.equals(previousStayLength, household.previousStayLength)
+                && Objects.equals(needsInterpreter, household.needsInterpreter)
+                && Objects.equals(accessToPrivateTransportation, household.accessToPrivateTransportation)
+                && Objects.equals(clientOrFamilyPhysicalIllnessHistory, household.clientOrFamilyPhysicalIllnessHistory)
+                && Objects.equals(clientOrFamilyMentalIllnessHistory, household.clientOrFamilyMentalIllnessHistory)
+                && Objects.equals(clientOrFamilyPersonalViolenceHistory, household.clientOrFamilyPersonalViolenceHistory)
+                && Objects.equals(clientOrFamilySubstanceDependencyHistory, household.clientOrFamilySubstanceDependencyHistory)
+                && Objects.equals(cpsInvolvement, household.cpsInvolvement)
+                && Objects.equals(cpsInvolvementActive, household.cpsInvolvementActive)
+                && Objects.equals(dcyfContactName, household.dcyfContactName)
+                && Objects.equals(dcyfContactEmail, household.dcyfContactEmail)
+                && Objects.equals(dcyfContactPhoneNumber, household.dcyfContactPhoneNumber)
+                && Objects.equals(section8VoucherLost, household.section8VoucherLost)
+                && Objects.equals(createdAt, household.createdAt);
     }
 
     @Override
@@ -228,26 +228,26 @@ public class Household {
         return Objects.hash(
                 id,
                 name,
-                times_homeless_in_three_years,
-                total_time_homeless_three_years,
-                total_time_homeless_past_year,
-                previously_living_in_non_human_habitation,
-                previously_living_in_emergency_shelter,
-                previously_unsheltered,
-                previous_stay_length,
-                needs_interpreter,
-                access_to_private_transportation,
-                client_or_family_physical_illness_history,
-                client_or_family_mental_illness_history,
-                client_or_family_personal_violence_history,
-                client_or_family_substance_dependency_history,
-                cps_involvement,
-                cps_involvement_active,
-                dcyf_contact_name,
-                dcyf_contact_email,
-                dcyf_contact_phone_number,
-                section_8_voucher_lost,
-                created_at);
+                timesHomelessInThreeYears,
+                totalTimeHomelessThreeYears,
+                totalTimeHomelessPastYear,
+                previouslyLivingInNonHumanHabitation,
+                previouslyLivingInEmergencyShelter,
+                previouslyUnsheltered,
+                previousStayLength,
+                needsInterpreter,
+                accessToPrivateTransportation,
+                clientOrFamilyPhysicalIllnessHistory,
+                clientOrFamilyMentalIllnessHistory,
+                clientOrFamilyPersonalViolenceHistory,
+                clientOrFamilySubstanceDependencyHistory,
+                cpsInvolvement,
+                cpsInvolvementActive,
+                dcyfContactName,
+                dcyfContactEmail,
+                dcyfContactPhoneNumber,
+                section8VoucherLost,
+                createdAt);
     }
 
     @Override
@@ -255,26 +255,26 @@ public class Household {
         return "Household{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", times_homeless_in_three_years=" + times_homeless_in_three_years +
-                ", total_time_homeless_three_years=" + total_time_homeless_three_years +
-                ", total_time_homeless_past_year=" + total_time_homeless_past_year +
-                ", previously_living_in_non_human_habitation=" + previously_living_in_non_human_habitation +
-                ", previously_living_in_emergency_shelter=" + previously_living_in_emergency_shelter +
-                ", previously_unsheltered=" + previously_unsheltered +
-                ", previous_stay_length=" + previous_stay_length +
-                ", needs_interpreter=" + needs_interpreter +
-                ", access_to_private_transportation=" + access_to_private_transportation +
-                ", client_or_family_physical_illness_history='" + client_or_family_physical_illness_history + '\'' +
-                ", client_or_family_mental_illness_history='" + client_or_family_mental_illness_history + '\'' +
-                ", client_or_family_personal_violence_history='" + client_or_family_personal_violence_history + '\'' +
-                ", client_or_family_substance_dependency_history='" + client_or_family_substance_dependency_history + '\'' +
-                ", cps_involvement=" + cps_involvement +
-                ", cps_involvement_active=" + cps_involvement_active +
-                ", dcyf_contact_name='" + dcyf_contact_name + '\'' +
-                ", dcyf_contact_email='" + dcyf_contact_email + '\'' +
-                ", dcyf_contact_phone_number='" + dcyf_contact_phone_number + '\'' +
-                ", section_8_voucher_lost=" + section_8_voucher_lost +
-                ", created_at='" + created_at + '\'' +
+                ", times_homeless_in_three_years=" + timesHomelessInThreeYears +
+                ", total_time_homeless_three_years=" + totalTimeHomelessThreeYears +
+                ", total_time_homeless_past_year=" + totalTimeHomelessPastYear +
+                ", previously_living_in_non_human_habitation=" + previouslyLivingInNonHumanHabitation +
+                ", previously_living_in_emergency_shelter=" + previouslyLivingInEmergencyShelter +
+                ", previously_unsheltered=" + previouslyUnsheltered +
+                ", previous_stay_length=" + previousStayLength +
+                ", needs_interpreter=" + needsInterpreter +
+                ", access_to_private_transportation=" + accessToPrivateTransportation +
+                ", client_or_family_physical_illness_history='" + clientOrFamilyPhysicalIllnessHistory + '\'' +
+                ", client_or_family_mental_illness_history='" + clientOrFamilyMentalIllnessHistory + '\'' +
+                ", client_or_family_personal_violence_history='" + clientOrFamilyPersonalViolenceHistory + '\'' +
+                ", client_or_family_substance_dependency_history='" + clientOrFamilySubstanceDependencyHistory + '\'' +
+                ", cps_involvement=" + cpsInvolvement +
+                ", cps_involvement_active=" + cpsInvolvementActive +
+                ", dcyf_contact_name='" + dcyfContactName + '\'' +
+                ", dcyf_contact_email='" + dcyfContactEmail + '\'' +
+                ", dcyf_contact_phone_number='" + dcyfContactPhoneNumber + '\'' +
+                ", section_8_voucher_lost=" + section8VoucherLost +
+                ", created_at='" + createdAt + '\'' +
                 '}';
     }
 
@@ -284,25 +284,25 @@ public class Household {
 
     public static class HouseholdBuilder {
         private String name;
-        private Integer times_homeless_in_three_years;
-        private Integer total_time_homeless_three_years;
-        private Integer total_time_homeless_past_year;
-        private Boolean previously_living_in_non_human_habitation;
-        private Boolean previously_living_in_emergency_shelter;
-        private Boolean previously_unsheltered;
-        private Integer previous_stay_length;
-        private Boolean needs_interpreter;
-        private Boolean access_to_private_transportation;
-        private String client_or_family_physical_illness_history;
-        private String client_or_family_mental_illness_history;
-        private String client_or_family_personal_violence_history;
-        private String client_or_family_substance_dependency_history;
-        private Boolean cps_involvement;
-        private Boolean cps_involvement_active;
-        private String dcyf_contact_name;
-        private String dcyf_contact_email;
-        private String dcyf_contact_phone_number;
-        private Boolean section_8_voucher_lost;
+        private Integer timesHomelessInThreeYears;
+        private Integer totalTimeHomelessThreeYears;
+        private Integer totalTimeHomelessPastYear;
+        private Boolean previouslyLivingInNonHumanHabitation;
+        private Boolean previouslyLivingInEmergencyShelter;
+        private Boolean previouslyUnsheltered;
+        private Integer previousStayLength;
+        private Boolean needsInterpreter;
+        private Boolean accessToPrivateTransportation;
+        private String clientOrFamilyPhysicalIllnessHistory;
+        private String clientOrFamilyMentalIllnessHistory;
+        private String clientOrFamilyPersonalViolenceHistory;
+        private String clientOrFamilySubstanceDependencyHistory;
+        private Boolean cpsInvolvement;
+        private Boolean cpsInvolvementActive;
+        private String dcyfContactName;
+        private String dcyfContactEmail;
+        private String dcyfContactPhoneNumber;
+        private Boolean section8VoucherLost;
 
         private HouseholdBuilder() {}
 
@@ -311,98 +311,98 @@ public class Household {
             return this;
         }
 
-        public HouseholdBuilder withTimes_homeless_in_three_years(Integer times_homeless_in_three_years) {
-            this.times_homeless_in_three_years = times_homeless_in_three_years;
+        public HouseholdBuilder withTimesHomelessInThreeYears(Integer times_homeless_in_three_years) {
+            this.timesHomelessInThreeYears = times_homeless_in_three_years;
             return this;
         }
 
-        public HouseholdBuilder withTotal_time_homeless_three_years(Integer total_time_homeless_three_years) {
-            this.total_time_homeless_three_years = total_time_homeless_three_years;
+        public HouseholdBuilder withTotalTimeHomelessThreeYears(Integer total_time_homeless_three_years) {
+            this.totalTimeHomelessThreeYears = total_time_homeless_three_years;
             return this;
         }
 
-        public HouseholdBuilder withTotal_time_homeless_past_year(Integer total_time_homeless_past_year) {
-            this.total_time_homeless_past_year = total_time_homeless_past_year;
+        public HouseholdBuilder withTotalTimeHomelessPastYear(Integer total_time_homeless_past_year) {
+            this.totalTimeHomelessPastYear = total_time_homeless_past_year;
             return this;
         }
 
-        public HouseholdBuilder withPreviously_living_in_non_human_habitation(Boolean previously_living_in_non_human_habitation) {
-            this.previously_living_in_non_human_habitation = previously_living_in_non_human_habitation;
+        public HouseholdBuilder withPreviouslyLivingInNonHumanHabitation(Boolean previously_living_in_non_human_habitation) {
+            this.previouslyLivingInNonHumanHabitation = previously_living_in_non_human_habitation;
             return this;
         }
 
-        public HouseholdBuilder withPreviously_living_in_emergency_shelter(Boolean previously_living_in_emergency_shelter) {
-            this.previously_living_in_emergency_shelter = previously_living_in_emergency_shelter;
+        public HouseholdBuilder withPreviouslyLivingInEmergencyShelter(Boolean previously_living_in_emergency_shelter) {
+            this.previouslyLivingInEmergencyShelter = previously_living_in_emergency_shelter;
             return this;
         }
 
-        public HouseholdBuilder withPreviously_unsheltered(Boolean previously_unsheltered) {
-            this.previously_unsheltered = previously_unsheltered;
+        public HouseholdBuilder withPreviouslyUnsheltered(Boolean previously_unsheltered) {
+            this.previouslyUnsheltered = previously_unsheltered;
             return this;
         }
 
-        public HouseholdBuilder withPrevious_stay_length(Integer previous_stay_length) {
-            this.previous_stay_length = previous_stay_length;
+        public HouseholdBuilder withPreviousStayLength(Integer previous_stay_length) {
+            this.previousStayLength = previous_stay_length;
             return this;
         }
 
-        public HouseholdBuilder withNeeds_interpreter(Boolean needs_interpreter) {
-            this.needs_interpreter = needs_interpreter;
+        public HouseholdBuilder withNeedsInterpreter(Boolean needs_interpreter) {
+            this.needsInterpreter = needs_interpreter;
             return this;
         }
 
-        public HouseholdBuilder withAccess_to_private_transportation(Boolean access_to_private_transportation) {
-            this.access_to_private_transportation = access_to_private_transportation;
+        public HouseholdBuilder withAccessToPrivateTransportation(Boolean access_to_private_transportation) {
+            this.accessToPrivateTransportation = access_to_private_transportation;
             return this;
         }
 
-        public HouseholdBuilder withClient_or_family_physical_illness_history(String client_or_family_physical_illness_history) {
-            this.client_or_family_physical_illness_history = client_or_family_physical_illness_history;
+        public HouseholdBuilder withClientOrFamilyPhysicalIllnessHistory(String client_or_family_physical_illness_history) {
+            this.clientOrFamilyPhysicalIllnessHistory = client_or_family_physical_illness_history;
             return this;
         }
 
-        public HouseholdBuilder withClient_or_family_mental_illness_history(String client_or_family_mental_illness_history) {
-            this.client_or_family_mental_illness_history = client_or_family_mental_illness_history;
+        public HouseholdBuilder withClientOrFamilyMentalIllnessHistory(String client_or_family_mental_illness_history) {
+            this.clientOrFamilyMentalIllnessHistory = client_or_family_mental_illness_history;
             return this;
         }
 
-        public HouseholdBuilder withClient_or_family_personal_violence_history(String client_or_family_personal_violence_history) {
-            this.client_or_family_personal_violence_history = client_or_family_personal_violence_history;
+        public HouseholdBuilder withClientOrFamilyPersonalViolenceHistory(String client_or_family_personal_violence_history) {
+            this.clientOrFamilyPersonalViolenceHistory = client_or_family_personal_violence_history;
             return this;
         }
 
-        public HouseholdBuilder withClient_or_family_substance_dependency_history(String client_or_family_substance_dependency_history) {
-            this.client_or_family_substance_dependency_history = client_or_family_substance_dependency_history;
+        public HouseholdBuilder withClientOrFamilySubstanceDependencyHistory(String client_or_family_substance_dependency_history) {
+            this.clientOrFamilySubstanceDependencyHistory = client_or_family_substance_dependency_history;
             return this;
         }
 
-        public HouseholdBuilder withCps_involvement(Boolean cps_involvement) {
-            this.cps_involvement = cps_involvement;
+        public HouseholdBuilder withCpsInvolvement(Boolean cps_involvement) {
+            this.cpsInvolvement = cps_involvement;
             return this;
         }
 
-        public HouseholdBuilder withCps_involvement_active(Boolean cps_involvement_active) {
-            this.cps_involvement_active = cps_involvement_active;
+        public HouseholdBuilder withCpsInvolvementActive(Boolean cps_involvement_active) {
+            this.cpsInvolvementActive = cps_involvement_active;
             return this;
         }
 
-        public HouseholdBuilder withDcyf_contact_name(String dcyf_contact_name) {
-            this.dcyf_contact_name = dcyf_contact_name;
+        public HouseholdBuilder withDcyfContactName(String dcyf_contact_name) {
+            this.dcyfContactName = dcyf_contact_name;
             return this;
         }
 
-        public HouseholdBuilder withDcyf_contact_email(String dcyf_contact_email) {
-            this.dcyf_contact_email = dcyf_contact_email;
+        public HouseholdBuilder withDcyfContactEmail(String dcyf_contact_email) {
+            this.dcyfContactEmail = dcyf_contact_email;
             return this;
         }
 
-        public HouseholdBuilder withDcyf_contact_phone_number(String dcyf_contact_phone_number) {
-            this.dcyf_contact_phone_number = dcyf_contact_phone_number;
+        public HouseholdBuilder withDcyfContactPhoneNumber(String dcyf_contact_phone_number) {
+            this.dcyfContactPhoneNumber = dcyf_contact_phone_number;
             return this;
         }
 
-        public HouseholdBuilder withSection_8_voucher_lost(Boolean section_8_voucher_lost) {
-            this.section_8_voucher_lost = section_8_voucher_lost;
+        public HouseholdBuilder withSection8VoucherLost(Boolean section_8_voucher_lost) {
+            this.section8VoucherLost = section_8_voucher_lost;
             return this;
         }
 

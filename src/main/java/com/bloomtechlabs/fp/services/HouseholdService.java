@@ -35,25 +35,25 @@ public class HouseholdService {
         Household householdToEdit = householdOpt.get();
 
         householdToEdit.setName(household.getName());
-        householdToEdit.setTimes_homeless_in_three_years(household.getTimes_homeless_in_three_years());
-        householdToEdit.setTotal_time_homeless_three_years(household.getTotal_time_homeless_three_years());
-        householdToEdit.setTotal_time_homeless_past_year(household.getTotal_time_homeless_past_year());
-        householdToEdit.setPreviously_living_in_non_human_habitation(household.isPreviously_living_in_non_human_habitation());
-        householdToEdit.setPreviously_living_in_emergency_shelter(household.isPreviously_living_in_emergency_shelter());
-        householdToEdit.setPreviously_unsheltered(household.isPreviously_unsheltered());
-        householdToEdit.setPrevious_stay_length(household.getPrevious_stay_length());
-        householdToEdit.setNeeds_interpreter(household.isNeeds_interpreter());
-        householdToEdit.setAccess_to_private_transportation(household.isAccess_to_private_transportation());
-        householdToEdit.setClient_or_family_physical_illness_history(household.getClient_or_family_physical_illness_history());
-        householdToEdit.setClient_or_family_mental_illness_history(household.getClient_or_family_mental_illness_history());
-        householdToEdit.setClient_or_family_personal_violence_history(household.getClient_or_family_personal_violence_history());
-        householdToEdit.setClient_or_family_substance_dependency_history(household.getClient_or_family_substance_dependency_history());
-        householdToEdit.setCps_involvement(household.isCps_involvement());
-        householdToEdit.setCps_involvement_active(household.isCps_involvement_active());
-        householdToEdit.setDcyf_contact_name(household.getDcyf_contact_name());
-        householdToEdit.setDcyf_contact_email(household.getDcyf_contact_email());
-        householdToEdit.setDcyf_contact_phone_number(household.getDcyf_contact_phone_number());
-        householdToEdit.setSection_8_voucher_lost(household.isSection_8_voucher_lost());
+        householdToEdit.setTimesHomelessInThreeYears(household.getTimesHomelessInThreeYears());
+        householdToEdit.setTotalTimeHomelessThreeYears(household.getTotalTimeHomelessThreeYears());
+        householdToEdit.setTotalTimeHomelessPastYear(household.getTotalTimeHomelessPastYear());
+        householdToEdit.setPreviouslyLivingInNonHumanHabitation(household.isPreviously_living_in_non_human_habitation());
+        householdToEdit.setPreviouslyLivingInEmergencyShelter(household.isPreviously_living_in_emergency_shelter());
+        householdToEdit.setPreviouslyUnsheltered(household.isPreviously_unsheltered());
+        householdToEdit.setPreviousStayLength(household.getPreviousStayLength());
+        householdToEdit.setNeedsInterpreter(household.isNeeds_interpreter());
+        householdToEdit.setAccessToPrivateTransportation(household.isAccess_to_private_transportation());
+        householdToEdit.setClientOrFamilyPhysicalIllnessHistory(household.getClientOrFamilyPhysicalIllnessHistory());
+        householdToEdit.setClientOrFamilyMentalIllnessHistory(household.getClientOrFamilyMentalIllnessHistory());
+        householdToEdit.setClientOrFamilyPersonalViolenceHistory(household.getClientOrFamilyPersonalViolenceHistory());
+        householdToEdit.setClientOrFamilySubstanceDependencyHistory(household.getClientOrFamilySubstanceDependencyHistory());
+        householdToEdit.setCpsInvolvement(household.isCps_involvement());
+        householdToEdit.setCpsInvolvementActive(household.isCps_involvement_active());
+        householdToEdit.setDcyfContactName(household.getDcyfContactName());
+        householdToEdit.setDcyfContactEmail(household.getDcyfContactEmail());
+        householdToEdit.setDcyfContactPhoneNumber(household.getDcyfContactPhoneNumber());
+        householdToEdit.setSection8VoucherLost(household.isSection_8_voucher_lost());
 
         return saveHousehold(householdToEdit);
     }
