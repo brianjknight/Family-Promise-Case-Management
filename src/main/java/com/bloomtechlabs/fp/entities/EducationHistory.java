@@ -42,10 +42,6 @@ public class EducationHistory {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public Long getClientId() {
         return clientId;
     }
