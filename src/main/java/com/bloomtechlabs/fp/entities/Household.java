@@ -69,25 +69,25 @@ public class Household {
 
     private Household(HouseholdBuilder builder) {
         this.name = builder.name;
-        this.timesHomelessInThreeYears = builder().timesHomelessInThreeYears;
-        this.totalTimeHomelessThreeYears = builder().totalTimeHomelessThreeYears;
-        this.totalTimeHomelessPastYear = builder().totalTimeHomelessPastYear;
-        this.previouslyLivingInNonHumanHabitation = builder().previouslyLivingInNonHumanHabitation;
-        this.previouslyLivingInEmergencyShelter = builder().previouslyLivingInEmergencyShelter;
-        this.previouslyUnsheltered = builder().previouslyUnsheltered;
-        this.previousStayLength = builder().previousStayLength;
-        this.needsInterpreter = builder().needsInterpreter;
-        this.accessToPrivateTransportation = builder().accessToPrivateTransportation;
-        this.clientOrFamilyPhysicalIllnessHistory = builder().clientOrFamilyPhysicalIllnessHistory;
-        this.clientOrFamilyMentalIllnessHistory = builder().clientOrFamilyMentalIllnessHistory;
-        this.clientOrFamilyPersonalViolenceHistory = builder().clientOrFamilyPersonalViolenceHistory;
-        this.clientOrFamilySubstanceDependencyHistory = builder().clientOrFamilySubstanceDependencyHistory;
-        this.cpsInvolvement = builder().cpsInvolvement;
-        this.cpsInvolvementActive = builder().cpsInvolvementActive;
-        this.dcyfContactName = builder().dcyfContactName;
-        this.dcyfContactEmail = builder().dcyfContactEmail;
-        this.dcyfContactPhoneNumber = builder().dcyfContactPhoneNumber;
-        this.section8VoucherLost = builder().section8VoucherLost;
+        this.timesHomelessInThreeYears = builder.timesHomelessInThreeYears;
+        this.totalTimeHomelessThreeYears = builder.totalTimeHomelessThreeYears;
+        this.totalTimeHomelessPastYear = builder.totalTimeHomelessPastYear;
+        this.previouslyLivingInNonHumanHabitation = builder.previouslyLivingInNonHumanHabitation;
+        this.previouslyLivingInEmergencyShelter = builder.previouslyLivingInEmergencyShelter;
+        this.previouslyUnsheltered = builder.previouslyUnsheltered;
+        this.previousStayLength = builder.previousStayLength;
+        this.needsInterpreter = builder.needsInterpreter;
+        this.accessToPrivateTransportation = builder.accessToPrivateTransportation;
+        this.clientOrFamilyPhysicalIllnessHistory = builder.clientOrFamilyPhysicalIllnessHistory;
+        this.clientOrFamilyMentalIllnessHistory = builder.clientOrFamilyMentalIllnessHistory;
+        this.clientOrFamilyPersonalViolenceHistory = builder.clientOrFamilyPersonalViolenceHistory;
+        this.clientOrFamilySubstanceDependencyHistory = builder.clientOrFamilySubstanceDependencyHistory;
+        this.cpsInvolvement = builder.cpsInvolvement;
+        this.cpsInvolvementActive = builder.cpsInvolvementActive;
+        this.dcyfContactName = builder.dcyfContactName;
+        this.dcyfContactEmail = builder.dcyfContactEmail;
+        this.dcyfContactPhoneNumber = builder.dcyfContactPhoneNumber;
+        this.section8VoucherLost = builder.section8VoucherLost;
     }
 
     public BigInteger getId() { return id; }
@@ -311,98 +311,98 @@ public class Household {
             return this;
         }
 
-        public HouseholdBuilder withTimesHomelessInThreeYears(Integer times_homeless_in_three_years) {
-            this.timesHomelessInThreeYears = times_homeless_in_three_years;
+        public HouseholdBuilder withTimesHomelessInThreeYears(Integer timesHomelessInThreeYears) {
+            this.timesHomelessInThreeYears = timesHomelessInThreeYears;
             return this;
         }
 
-        public HouseholdBuilder withTotalTimeHomelessThreeYears(Integer total_time_homeless_three_years) {
-            this.totalTimeHomelessThreeYears = total_time_homeless_three_years;
+        public HouseholdBuilder withTotalTimeHomelessThreeYears(Integer totalTimeHomelessThreeYears) {
+            this.totalTimeHomelessThreeYears = totalTimeHomelessThreeYears;
             return this;
         }
 
-        public HouseholdBuilder withTotalTimeHomelessPastYear(Integer total_time_homeless_past_year) {
-            this.totalTimeHomelessPastYear = total_time_homeless_past_year;
+        public HouseholdBuilder withTotalTimeHomelessPastYear(Integer totalTimeHomelessPastYear) {
+            this.totalTimeHomelessPastYear = totalTimeHomelessPastYear;
             return this;
         }
 
-        public HouseholdBuilder withPreviouslyLivingInNonHumanHabitation(Boolean previously_living_in_non_human_habitation) {
-            this.previouslyLivingInNonHumanHabitation = previously_living_in_non_human_habitation;
+        public HouseholdBuilder withPreviouslyLivingInNonHumanHabitation(Boolean previouslyLivingInNonHumanHabitation) {
+            this.previouslyLivingInNonHumanHabitation = previouslyLivingInNonHumanHabitation;
             return this;
         }
 
-        public HouseholdBuilder withPreviouslyLivingInEmergencyShelter(Boolean previously_living_in_emergency_shelter) {
-            this.previouslyLivingInEmergencyShelter = previously_living_in_emergency_shelter;
+        public HouseholdBuilder withPreviouslyLivingInEmergencyShelter(Boolean previouslyLivingInEmergencyShelter) {
+            this.previouslyLivingInEmergencyShelter = previouslyLivingInEmergencyShelter;
             return this;
         }
 
-        public HouseholdBuilder withPreviouslyUnsheltered(Boolean previously_unsheltered) {
-            this.previouslyUnsheltered = previously_unsheltered;
+        public HouseholdBuilder withPreviouslyUnsheltered(Boolean previouslyUnsheltered) {
+            this.previouslyUnsheltered = previouslyUnsheltered;
             return this;
         }
 
-        public HouseholdBuilder withPreviousStayLength(Integer previous_stay_length) {
-            this.previousStayLength = previous_stay_length;
+        public HouseholdBuilder withPreviousStayLength(Integer previousStayLength) {
+            this.previousStayLength = previousStayLength;
             return this;
         }
 
-        public HouseholdBuilder withNeedsInterpreter(Boolean needs_interpreter) {
-            this.needsInterpreter = needs_interpreter;
+        public HouseholdBuilder withNeedsInterpreter(Boolean needsInterpreter) {
+            this.needsInterpreter = needsInterpreter;
             return this;
         }
 
-        public HouseholdBuilder withAccessToPrivateTransportation(Boolean access_to_private_transportation) {
-            this.accessToPrivateTransportation = access_to_private_transportation;
+        public HouseholdBuilder withAccessToPrivateTransportation(Boolean accessToPrivateTransportation) {
+            this.accessToPrivateTransportation = accessToPrivateTransportation;
             return this;
         }
 
-        public HouseholdBuilder withClientOrFamilyPhysicalIllnessHistory(String client_or_family_physical_illness_history) {
-            this.clientOrFamilyPhysicalIllnessHistory = client_or_family_physical_illness_history;
+        public HouseholdBuilder withClientOrFamilyPhysicalIllnessHistory(String clientOrFamilyPhysicalIllnessHistory) {
+            this.clientOrFamilyPhysicalIllnessHistory = clientOrFamilyPhysicalIllnessHistory;
             return this;
         }
 
-        public HouseholdBuilder withClientOrFamilyMentalIllnessHistory(String client_or_family_mental_illness_history) {
-            this.clientOrFamilyMentalIllnessHistory = client_or_family_mental_illness_history;
+        public HouseholdBuilder withClientOrFamilyMentalIllnessHistory(String clientOrFamilyMentalIllnessHistory) {
+            this.clientOrFamilyMentalIllnessHistory = clientOrFamilyMentalIllnessHistory;
             return this;
         }
 
-        public HouseholdBuilder withClientOrFamilyPersonalViolenceHistory(String client_or_family_personal_violence_history) {
-            this.clientOrFamilyPersonalViolenceHistory = client_or_family_personal_violence_history;
+        public HouseholdBuilder withClientOrFamilyPersonalViolenceHistory(String clientOrFamilyPersonalViolenceHistory) {
+            this.clientOrFamilyPersonalViolenceHistory = clientOrFamilyPersonalViolenceHistory;
             return this;
         }
 
-        public HouseholdBuilder withClientOrFamilySubstanceDependencyHistory(String client_or_family_substance_dependency_history) {
-            this.clientOrFamilySubstanceDependencyHistory = client_or_family_substance_dependency_history;
+        public HouseholdBuilder withClientOrFamilySubstanceDependencyHistory(String clientOrFamilySubstanceDependencyHistory) {
+            this.clientOrFamilySubstanceDependencyHistory = clientOrFamilySubstanceDependencyHistory;
             return this;
         }
 
-        public HouseholdBuilder withCpsInvolvement(Boolean cps_involvement) {
-            this.cpsInvolvement = cps_involvement;
+        public HouseholdBuilder withCpsInvolvement(Boolean cpsInvolvement) {
+            this.cpsInvolvement = cpsInvolvement;
             return this;
         }
 
-        public HouseholdBuilder withCpsInvolvementActive(Boolean cps_involvement_active) {
-            this.cpsInvolvementActive = cps_involvement_active;
+        public HouseholdBuilder withCpsInvolvementActive(Boolean cpsInvolvementActive) {
+            this.cpsInvolvementActive = cpsInvolvementActive;
             return this;
         }
 
-        public HouseholdBuilder withDcyfContactName(String dcyf_contact_name) {
-            this.dcyfContactName = dcyf_contact_name;
+        public HouseholdBuilder withDcyfContactName(String dcyfContactName) {
+            this.dcyfContactName = dcyfContactName;
             return this;
         }
 
-        public HouseholdBuilder withDcyfContactEmail(String dcyf_contact_email) {
-            this.dcyfContactEmail = dcyf_contact_email;
+        public HouseholdBuilder withDcyfContactEmail(String dcyfContactEmail) {
+            this.dcyfContactEmail = dcyfContactEmail;
             return this;
         }
 
-        public HouseholdBuilder withDcyfContactPhoneNumber(String dcyf_contact_phone_number) {
-            this.dcyfContactPhoneNumber = dcyf_contact_phone_number;
+        public HouseholdBuilder withDcyfContactPhoneNumber(String dcyfContactPhoneNumber) {
+            this.dcyfContactPhoneNumber = dcyfContactPhoneNumber;
             return this;
         }
 
-        public HouseholdBuilder withSection8VoucherLost(Boolean section_8_voucher_lost) {
-            this.section8VoucherLost = section_8_voucher_lost;
+        public HouseholdBuilder withSection8VoucherLost(Boolean section8VoucherLost) {
+            this.section8VoucherLost = section8VoucherLost;
             return this;
         }
 
