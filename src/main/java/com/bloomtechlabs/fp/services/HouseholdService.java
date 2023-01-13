@@ -61,4 +61,8 @@ public class HouseholdService {
     public void deleteHouseholdById(BigInteger id) {
         householdRepository.deleteById(id);
     }
+
+    public long count() {
+        return householdRepository.count();
+    }
 }

@@ -87,9 +87,14 @@ public class HouseholdDataSeeder implements CommandLineRunner {
                     .withSection_8_voucher_lost(Boolean.FALSE)
                     .build();
 
+            Household householdEmpty = Household.builder()
+                    .withName("Empty Household")
+                    .build();
+
             householdService.saveHousehold(household1);
             householdService.saveHousehold(household2);
             householdService.saveHousehold(household3);
+            householdService.saveHousehold(householdEmpty);
 
             System.out.println("Added " + householdService.count() + " records to the household table.");
        } else {
