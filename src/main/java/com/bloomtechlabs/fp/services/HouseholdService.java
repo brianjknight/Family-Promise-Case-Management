@@ -19,15 +19,17 @@ public class HouseholdService {
         return householdRepository.findAll();
     }
 
-    // TODO Exception handling for non-existing id.
+    // TODO Exception handling for non-existing id. IllegalArgumentException?
     public Optional<Household> findHouseholdById(BigInteger id) {
         return householdRepository.findById(id);
     }
 
+    // TODO Exception handling for null input.
     public Household saveHousehold(Household household) {
         return householdRepository.save(household);
     }
 
+    // TODO Exception handling for null input. Check for null return in optional.
     public Household editHouseholdById(BigInteger id, Household household) {
         Optional<Household> householdOpt = findHouseholdById(id);
         Household householdToEdit = householdOpt.get();
