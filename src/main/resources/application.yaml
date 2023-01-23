@@ -5,8 +5,11 @@ spring:
       client:
         registration:
           auth0:
-            client-id: YOUR_CLIENT_ID
-            client-secret: YOUR_CLIENT_SECRET
+
+            client-id: YMKcoQEU2VeWgKlvfImLU2M0mjXn3gvc
+            client-secret: SUPERSECRET
+
+
             scope:
               - openid
               - profile
@@ -14,4 +17,6 @@ spring:
         provider:
           auth0:
             # trailing slash is important!
-            issuer-uri: https://YOUR_DOMAIN/
+
+            issuer-uri: https://dev-35n2stap.auth0.com/
+
