@@ -1,8 +1,10 @@
 package com.bloomtechlabs.fp.controllers;
 
+import com.bloomtechlabs.fp.entities.EducationHistory;
 import com.bloomtechlabs.fp.entities.Household;
 import com.bloomtechlabs.fp.services.HouseholdService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,6 +29,16 @@ public class HouseholdController {
     @GetMapping
     public List<Household> findAllHouseholds() {
         return householdService.findAllHouseholds();
+    }
+
+    /**
+     * @param offset page index to return results from.
+     * @param limit number of results to include per page.
+     * @return returns a paginated list.
+     */
+    @GetMapping("{offset}/{limit}")
+    public ResponseEntity<Page<Household>> findAllHouseholdsPaginated(@PathVariable int offset, @PathVariable int limit) {
+        return ResponseEntity.ok(householdService.findAllHouseholdsPaginated(offset, limit));
     }
 
     @GetMapping("{id}")
