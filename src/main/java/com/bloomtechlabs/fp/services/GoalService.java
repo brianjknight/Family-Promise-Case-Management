@@ -1,9 +1,12 @@
 package com.bloomtechlabs.fp.services;
 
+import com.bloomtechlabs.fp.entities.EducationHistory;
 import com.bloomtechlabs.fp.entities.Goal;
 import com.bloomtechlabs.fp.exceptions.ResourceNotFoundException;
 import com.bloomtechlabs.fp.repositories.GoalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +21,15 @@ public class GoalService {
 
     public List<Goal> getAllGoals() {
         return goalRepository.findAll();
+    }
+
+    /**
+     * @param offset page index to return results from.
+     * @param limit number of results to include per page.
+     * @return returns a paginated list.
+     */
+    public Page<Goal> getAllGoalsPaginated(int offset, int limit) {
+        return goalRepository.findAll(PageRequest.of(offset, limit));
     }
 
     public Goal createGoal(Goal goal) {
