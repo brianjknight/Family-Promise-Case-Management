@@ -1,9 +1,12 @@
 package com.bloomtechlabs.fp.services;
 
 import com.bloomtechlabs.fp.entities.EducationHistory;
+import com.bloomtechlabs.fp.entities.EmploymentHistory;
 import com.bloomtechlabs.fp.exceptions.ResourceNotFoundException;
 import com.bloomtechlabs.fp.repositories.EducationHistoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +20,15 @@ public class EducationHistoryService {
 
     public List<EducationHistory> getAllEducationHistories() {
         return educationHistoryRepository.findAll();
+    }
+
+    /**
+     * @param offset page index to return results from.
+     * @param limit number of results to include per page.
+     * @return returns a paginated list.
+     */
+    public Page<EducationHistory> getAllEducationHistoriesPaginated(int offset, int limit) {
+        return educationHistoryRepository.findAll(PageRequest.of(offset, limit));
     }
 
     public EducationHistory createEducationHistory(EducationHistory educationHistory) {
