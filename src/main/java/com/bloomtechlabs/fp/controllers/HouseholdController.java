@@ -1,6 +1,5 @@
 package com.bloomtechlabs.fp.controllers;
 
-import com.bloomtechlabs.fp.entities.EducationHistory;
 import com.bloomtechlabs.fp.entities.Household;
 import com.bloomtechlabs.fp.services.HouseholdService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.math.BigInteger;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/households")

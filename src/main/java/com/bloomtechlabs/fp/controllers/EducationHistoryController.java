@@ -1,7 +1,6 @@
 package com.bloomtechlabs.fp.controllers;
 
 import com.bloomtechlabs.fp.entities.EducationHistory;
-import com.bloomtechlabs.fp.entities.EmploymentHistory;
 import com.bloomtechlabs.fp.services.EducationHistoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

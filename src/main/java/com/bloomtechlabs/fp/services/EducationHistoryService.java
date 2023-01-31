@@ -1,7 +1,6 @@
 package com.bloomtechlabs.fp.services;
 
 import com.bloomtechlabs.fp.entities.EducationHistory;
-import com.bloomtechlabs.fp.entities.EmploymentHistory;
 import com.bloomtechlabs.fp.exceptions.ResourceNotFoundException;
 import com.bloomtechlabs.fp.repositories.EducationHistoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;

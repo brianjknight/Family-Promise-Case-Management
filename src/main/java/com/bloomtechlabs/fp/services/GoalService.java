@@ -1,6 +1,5 @@
 package com.bloomtechlabs.fp.services;
 
-import com.bloomtechlabs.fp.entities.EducationHistory;
 import com.bloomtechlabs.fp.entities.Goal;
 import com.bloomtechlabs.fp.exceptions.ResourceNotFoundException;
 import com.bloomtechlabs.fp.repositories.GoalRepository;
