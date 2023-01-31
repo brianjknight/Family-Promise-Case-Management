@@ -27,7 +27,7 @@ public class EmploymentHistoryDataSeeder implements CommandLineRunner {
                         String.format("Certification #%d", i));
                 employmentHistoryService.createEmploymentHistory(tempEmploymentHistory);
             }
-            
+
             UUID uuid1 = UUID.randomUUID();
             EmploymentHistory employmentHistory1 =
                     new EmploymentHistory(uuid1, true, "Forklift Certified");
