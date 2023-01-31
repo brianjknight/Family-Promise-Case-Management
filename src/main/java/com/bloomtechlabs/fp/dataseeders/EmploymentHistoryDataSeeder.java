@@ -20,6 +20,14 @@ public class EmploymentHistoryDataSeeder implements CommandLineRunner {
 
     private void loadEmploymentHistoryData() {
         if(employmentHistoryService.count() == 0) {
+            for(int i = 1; i <= 200; i++) {
+                EmploymentHistory tempEmploymentHistory = new EmploymentHistory(
+                        UUID.fromString(String.format("00000000-0000-0000-0000-%s", i)),
+                        i % 2 == 0,
+                        String.format("Certification #%d", i));
+                employmentHistoryService.createEmploymentHistory(tempEmploymentHistory);
+            }
+            
             UUID uuid1 = UUID.randomUUID();
             EmploymentHistory employmentHistory1 =
                     new EmploymentHistory(uuid1, true, "Forklift Certified");
