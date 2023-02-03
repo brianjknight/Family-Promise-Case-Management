@@ -1,14 +1,59 @@
-# family-promise-case-mgmt-be-a
+# Family-Promise-Case-Management
+
+## Introduction
+
+Family Promise helps local communities coordinate their compassion to address the root causes of family homelessness. They tap existing local resources to empower families towards economic stability. Families come to them in crisis; they help them rebuild their lives with new skills and ongoing support. They address the issue holistically, providing prevention services before families reach a crisis, shelter and case management when they become homeless, and stabilization programs once they have secured housing to ensure they remain independent.
+
+## Problem Statement
+
+Case Managers for Family Promise do not have a standard process to manage families.  Cases are managed manually through spreadsheets and other documentation.
+
+## Solution
+
+Family Promise needs a case management system for case managers to access data in the case database across FP products.  This system will help them access Create a case management system that is private to Family Promise.  The case management system must allow the case manager to view the following attributes within the object:
+
+Phase 1 Attributes:
+
+- Easy-to-use interface
+- Household Information (Family Data = immediate family members)
+- Head of Household (main point of contact)
+- Store Documentation
+    - Applications
+    - Identification
+    - Any other required documentation noted via the stakeholder
+- Capture & Save Notes
+
+## Technologies BD Learning
+
+- Postgres - DB
+- Springboot - API
+
+## BD BE Steps - Actions
+
+- Review the Existing Schema & Design
+- Creation and Migration of the Database
+- Case Creation
+    - Input from the intake form
+    - Create a Table and Crud Workflow
+        - S3 Documentation
+    - Separate each section into end points
+    - Implement Auth0
+- Export of case notes
+- Export of intake information into form
+- FCMS Enrollment
+    - Program Selection
+- Time Reporting
+- Time Tracking
+- Notes Export
+    - Export for timestamps and total time
+        - In Export, we will want the the program that they are enrolled in
+- Calendar Integrations - Google Calendar Integration - 10K hits Something to review and discuss with Chris
 
 ### Basic Java API Scaffold
 
 Welcome to your `Family Promise`. Use this to start your own Greenfield Project using java, spring, and common industry standards.
 
 This repository assumes a handful of industry practices and standards. We strive to keep you on the bleeding edge of the industry and as a result, we have made some opinions for you so that you don't have to; you're welcome.
-
-## Requirements
-
-Labs teams must follow all [Labs Engineering Standards](https://bloomtechlabs.gitbook.io).
 
 
 ## Getting Started
