@@ -4,6 +4,8 @@ import com.bloomtechlabs.fp.entities.Household;
 import com.bloomtechlabs.fp.exceptions.ResourceNotFoundException;
 import com.bloomtechlabs.fp.repositories.HouseholdRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +21,15 @@ public class HouseholdService {
 
     public List<Household> findAllHouseholds() {
         return householdRepository.findAll();
+    }
+
+    /**
+     * @param offset page index to return results from.
+     * @param limit number of results to include per page.
+     * @return returns a paginated list.
+     */
+    public Page<Household> findAllHouseholdsPaginated(int offset, int limit) {
+        return householdRepository.findAll(PageRequest.of(offset, limit));
     }
 
     public ResponseEntity<Household> getHouseholdById(BigInteger id) {

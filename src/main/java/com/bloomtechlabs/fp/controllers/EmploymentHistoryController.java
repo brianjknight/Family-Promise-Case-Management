@@ -3,6 +3,7 @@ package com.bloomtechlabs.fp.controllers;
 import com.bloomtechlabs.fp.entities.EmploymentHistory;
 import com.bloomtechlabs.fp.services.EmploymentHistoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,6 +20,16 @@ public class EmploymentHistoryController {
     @GetMapping
     List<EmploymentHistory> getAllEmploymentHistories() {
         return employmentHistoryService.getAllEmploymentHistories();
+    }
+
+    /**
+     * @param offset page index to return results from.
+     * @param limit number of results to include per page.
+     * @return returns a paginated list of EmploymentHistory objects.
+     */
+    @GetMapping("{offset}/{limit}")
+    public ResponseEntity<Page<EmploymentHistory>> getAllEmploymentHistoriesPaginated(@PathVariable int offset, @PathVariable int limit) {
+        return ResponseEntity.ok(employmentHistoryService.getAllEmploymentHistoriesPaginated(offset, limit));
     }
 
     @PostMapping
